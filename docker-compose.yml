@@ -1,6 +1,6 @@
 services:
   claude-monitor:
-    image: ghcr.io/amphora/claude-code-usage-monitor:latest
+    image: ghcr.io/amphora/claude-code-usage-monitor:docker
     container_name: claude-usage-monitor
     stdin_open: true
     tty: true
