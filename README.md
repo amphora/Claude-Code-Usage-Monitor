@@ -55,8 +55,35 @@ A beautiful real-time terminal monitoring tool for Claude AI token usage. Track 
 
 ## 🚀 Installation
 
-### Prerequisites
+### Method 1: Docker (Recommended for non-technical users)
 
+**Prerequisites:**
+- Docker and Docker Compose installed on your system
+
+**Super Simple Setup:**
+
+```bash
+# Clone the repository
+git clone https://github.com/amphora/Claude-Code-Usage-Monitor.git
+cd Claude-Code-Usage-Monitor
+
+# Run with pre-built image (no build time!)
+docker-compose up
+
+# Or run with custom options
+docker-compose run claude-monitor --plan max5 --timezone US/Eastern
+```
+
+**Development Setup (build locally):**
+
+```bash
+# Build and run locally
+docker-compose -f docker-compose.local.yml up --build
+```
+
+### Method 2: Local Installation
+
+**Prerequisites:**
 1. **Python 3.6+** installed on your system
 2. **pytz** Python package:
    ```bash
@@ -67,7 +94,7 @@ A beautiful real-time terminal monitoring tool for Claude AI token usage. Track 
    npm install -g ccusage
    ```
 
-### Quick Setup
+**Quick Setup:**
 
 ```bash
 # Clone the repository
