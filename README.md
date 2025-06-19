@@ -58,9 +58,26 @@ A beautiful real-time terminal monitoring tool for Claude AI token usage. Track 
 ### Method 1: Docker (Recommended for non-technical users)
 
 **Prerequisites:**
-- Docker and Docker Compose installed on your system
+- Docker installed on your system
 
-**Super Simple Setup:**
+**Option A: One Command (No Download Required!)**
+
+```bash
+# Just run this single command:
+docker run -it --rm \
+  -v "$HOME/.claude:/root/.claude:ro" \
+  -e HOME=/root \
+  ghcr.io/amphora/claude-code-usage-monitor:docker
+
+# Or with custom options:
+docker run -it --rm \
+  -v "$HOME/.claude:/root/.claude:ro" \
+  -e HOME=/root \
+  ghcr.io/amphora/claude-code-usage-monitor:docker \
+  --plan max5 --timezone US/Eastern
+```
+
+**Option B: Using Docker Compose**
 
 ```bash
 # Clone the repository
