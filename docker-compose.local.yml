@@ -1,0 +1,14 @@
+services:
+  claude-monitor:
+    build: .
+    container_name: claude-usage-monitor-local
+    stdin_open: true
+    tty: true
+    # Mount the host's Claude Code data directory (contains JSONL files)
+    volumes:
+      - "${HOME}/.claude:/root/.claude:ro"
+    environment:
+      - HOME=/root
+    # Default arguments - users can override with docker-compose run
+    command: ["--plan", "pro"]
+    # Example: docker-compose -f docker-compose.local.yml run claude-monitor --plan max5
